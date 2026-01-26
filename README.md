@@ -78,6 +78,7 @@ npm run dev
 ## 👨‍💻 Author
 
 **Ali Asaad**
+
 Front-End Developer | React.js
 
 - GitHub: [https://github.com/aliasaad01](https://github.com/aliasaad01)
