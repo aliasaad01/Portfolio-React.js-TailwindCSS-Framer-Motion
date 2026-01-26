@@ -7,7 +7,7 @@ This portfolio showcases my skills, projects, and experience with a clean UI, sm
 
 ## 🌐 Live Demo
 
-🔗 https://YOUR-VERCEL-LINK.vercel.app
+🔗 [View Live Demo on Vercel](https://ali-asaad-portfolio.vercel.app/) 
 
 ---
 
