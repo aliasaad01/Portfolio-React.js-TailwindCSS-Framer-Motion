@@ -1,16 +1,85 @@
-# React + Vite
+# 🚀 Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and responsive **Front-End Developer Portfolio** built with **React.js**, **Tailwind CSS**, and **Framer Motion**.  
+This portfolio showcases my skills, projects, and experience with a clean UI, smooth animations, and modern design principles.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Live Demo
 
-## React Compiler
+🔗 https://YOUR-VERCEL-LINK.vercel.app
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📌 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ⚡ Fully responsive design (Mobile / Tablet / Desktop)
+- 🎨 Modern UI with dark theme
+- 🎥 Smooth scroll & reveal animations
+- 🧠 Clean and scalable code structure
+- 🗂 Sections:
+  - Hero
+  - About Me
+  - Skills
+  - Projects
+  - Contact
+- 🔗 External links (GitHub, LinkedIn, Instagram, Facebook, Email)
+
+---
+
+## 📸 Screenshots
+
+## ![Hero Section](public/images/hero.png)
+
+![Projects Section](public/images/projects.png)
+
+---
+
+## 🛠 Tech Stack
+
+- **React.js** – Component-based UI development
+- **Tailwind CSS** – Utility-first styling
+- **Framer Motion** – Smooth animations & transitions
+- **Vite** – Fast development & build tool
+- **Lucide Icons & React Icons**
+
+---
+
+## 📂 Project Structure
+
+````txt
+src/
+├─ components/
+│ ├─ Navbar.jsx
+│ ├─ Hero.jsx
+│ ├─ About.jsx
+│ ├─ Skills.jsx
+│ ├─ Projects.jsx
+│ ├─ Contact.jsx
+│ └─ Footer.jsx
+├─ index.css
+├─ App.jsx
+└─ main.jsx
+
+---
+
+## ⚙️ Installation & Run
+
+Clone the repository:
+
+```bash
+git clone https://github.com/aliasaad01/portfolio-react-tailwind-framer.git
+npm install
+npm run dev
+
+---
+````
+
+## 👨‍💻 Author
+
+**Ali Asaad**
+Front-End Developer | React.js
+
+- GitHub: [https://github.com/aliasaad01](https://github.com/aliasaad01)
+
+- ⭐ If you like this project, give it a star!
