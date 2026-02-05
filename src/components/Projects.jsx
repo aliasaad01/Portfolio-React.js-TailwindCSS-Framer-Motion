@@ -4,7 +4,7 @@ import { FaGithub, FaShare } from "react-icons/fa";
 
 const projects = [
   {
-    title: "React Admin Dashboard",
+    title: "React Admin Dashboard.",
     description:
       "A modern admin dashboard built with React.js, designed to manage products and data efficiently through a clean, responsive, dark/light mode and user-friendly interface.",
     tools: ["React.js", "TailwindCSS", "Redux Toolkit", "React Router"],
@@ -13,16 +13,16 @@ const projects = [
     img: "/dashboard-3.png",
   },
   {
-    title: "amBean Coffee Shop",
+    title: "amBean Coffee Shop.",
     description:
       "amBean is a modern and responsive coffee store designed for a smooth and enjoyable user experience. It features a clean interface, product browsing, cart functionality, a virtual checkout, and dedicated About & Contact pages.",
     tools: ["React.js", "TypeScript", "TailwindCSS", "React Router"],
     liveDemo: "https://ambean-coffee-shop.vercel.app/",
     sourceCode: "https://github.com/aliasaad01/amBean-Coffee-Shop",
-    img: "/amBean-home-light.png",
+    img: "/amBean-home.png",
   },
   {
-    title: "E-Commerce Website",
+    title: "E-Commerce Website.",
     description:
       "A modern e-commerce website built with React.js, featuring product browsing, filtering, cart management, and a smooth user experience.",
     tools: ["React.js", "TailwindCSS", "Redux Toolkit", "React Router"],
