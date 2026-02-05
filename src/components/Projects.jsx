@@ -21,6 +21,15 @@ const projects = [
     sourceCode: "https://github.com/aliasaad01/E-COMMERCE",
     img: "/e-commerce-2.png",
   },
+  {
+    title: "amBean Coffee Shop",
+    description:
+      "amBean is a modern and responsive coffee store designed for a smooth and enjoyable user experience. It features a clean interface, product browsing, cart functionality, a virtual checkout, and dedicated About & Contact pages.",
+    tools: ["React.js", "TypeScript", "TailwindCSS", "React Router"],
+    liveDemo: "https://ambean-coffee-shop.vercel.app/",
+    sourceCode: "https://github.com/aliasaad01/amBean-Coffee-Shop",
+    img: "/amBean-home-light.png",
+  },
 ];
 
 const containerVariants = {
