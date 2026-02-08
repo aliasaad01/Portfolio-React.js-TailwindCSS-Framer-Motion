@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { FaGithub, FaReact } from "react-icons/fa";
-import { SiTailwindcss } from "react-icons/si";
+import { SiTailwindcss, SiTypescript } from "react-icons/si";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -122,13 +122,26 @@ export default function Hero() {
                               hover:scale-105 transition-all cursor-default will-change-transform"
               >
                 <span>
+                  <SiTypescript
+                    className="text-[#3178c6]"
+                    size={16}
+                    aria-label="React logo"
+                  />
+                </span>
+                <p className="text-sm">TypeScript</p>
+              </div>
+              <div
+                className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2
+                              hover:scale-105 transition-all cursor-default will-change-transform"
+              >
+                <span>
                   <SiTailwindcss
                     className="text-sky-400"
                     size={18}
                     aria-label="React logo"
                   />
                 </span>
-                <p className="text-sm">TailwindCSS</p>
+                <p className="text-sm">Tailwind CSS</p>
               </div>
               <div
                 className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2
