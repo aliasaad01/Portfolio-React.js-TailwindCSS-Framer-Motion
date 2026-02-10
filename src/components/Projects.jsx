@@ -26,8 +26,8 @@ const projects = [
     description:
       "A modern e-commerce website built with React.js, featuring product browsing, filtering, cart management, and a smooth user experience.",
     tools: ["React.js", "TailwindCSS", "Redux Toolkit", "React Router"],
-    liveDemo: "https://ali-asaad-e-commerce.vercel.app/",
-    sourceCode: "https://github.com/aliasaad01/E-COMMERCE",
+    liveDemo: "https://e-commerce-web-three-beryl.vercel.app/",
+    sourceCode: "https://github.com/aliasaad01/E-commerce-web",
     img: "/e-commerce-2.png",
   },
 ];
