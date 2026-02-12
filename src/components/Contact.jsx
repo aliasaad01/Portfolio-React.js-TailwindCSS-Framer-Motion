@@ -21,13 +21,15 @@ const contactBoxs = [
   {
     icon: <Mail size={24} />,
     title: "Email",
-    text: "ali.asaad.devx@gmail.com",
+    // text: "ali.asaad.devx@gmail.com", Edit For Mostaql
+    text: "--------- @gmail.com",
     href: "mailto:ali.asaad.devx@gmail.com",
   },
   {
     icon: <FaPhone size={24} />,
     title: "Phone",
-    text: "+963 937237163",
+    // text: "+963 937237163", Edit For Mostaql
+    text: "+963 ---------",
     href: "tel:+963937237163",
   },
 ];

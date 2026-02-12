@@ -43,7 +43,8 @@ const personalInfo = [
   {
     icon: <Mail size={30} />,
     title: "Email",
-    value: "ali.asaad.devx@gmail.com",
+    // value: "ali.asaad.devx@gmail.com", Edit For Mostaql
+    value: "--------- @gmail.com",
   },
   { icon: <MapPin size={30} />, title: "Location", value: "Syria/Tartous" },
   {
