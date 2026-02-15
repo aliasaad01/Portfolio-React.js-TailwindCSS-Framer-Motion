@@ -21,16 +21,16 @@ const contactBoxs = [
   {
     icon: <Mail size={24} />,
     title: "Email",
-    // text: "ali.asaad.devx@gmail.com", Edit For Mostaql
-    text: "--------- @gmail.com",
-    // href: "mailto:ali.asaad.devx@gmail.com",
+    text: "ali.asaad.devx@gmail.com",
+    // text: "--------- @gmail.com",
+    href: "mailto:ali.asaad.devx@gmail.com",
   },
   {
     icon: <FaPhone size={24} />,
     title: "Phone",
-    // text: "+963 937237163", Edit For Mostaql
-    text: "+963 ---------",
-    // href: "tel:+963937237163",
+    text: "+963 937237163",
+    // text: "+963 ---------",
+    href: "tel:+963937237163",
   },
 ];
 const containerVariant = {
@@ -46,23 +46,23 @@ const containerVariant = {
 const icons = [
   {
     icon: <FaGithub size={20} />,
-    // href: "https://github.com/aliasaad01",
+    href: "https://github.com/aliasaad01",
   },
   {
     icon: <FaInstagram size={20} />,
-    // href: "https://instagram.com/ali_as_01",
+    href: "https://instagram.com/ali_as_01",
   },
   {
     icon: <FaFacebook size={20} />,
-    // href: "https://facebook.com/lyasd.944396",
+    href: "https://facebook.com/lyasd.944396",
   },
   {
     icon: <FaLinkedin size={20} />,
-    // href: "https://www.linkedin.com/in/ali-asaad-21b199243/",
+    href: "https://www.linkedin.com/in/ali-asaad-21b199243/",
   },
   {
     icon: <FaWhatsapp size={20} />,
-    // href: "https://wa.me/963937237163",
+    href: "https://wa.me/963937237163",
   },
 ];
 

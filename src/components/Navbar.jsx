@@ -71,7 +71,7 @@ const Navbar = () => {
         {/* Social Icons */}
         <div className="hidden md:flex items-center space-x-4">
           <a
-            // href="https://github.com/aliasaad01"
+            href="https://github.com/aliasaad01"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-[#6B8E23] transition-all hover:-translate-y-1 duration-200"
@@ -79,7 +79,7 @@ const Navbar = () => {
             <FaGithub size={20} />
           </a>
           <a
-            // href="https://www.linkedin.com/in/ali-asaad-21b199243/"
+            href="https://www.linkedin.com/in/ali-asaad-21b199243/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-[#6B8E23] transition-all hover:-translate-y-1 duration-200"
@@ -87,7 +87,7 @@ const Navbar = () => {
             <FaLinkedin size={20} />
           </a>
           <a
-            // href="https://facebook.com/lyasd.944396"
+            href="https://facebook.com/lyasd.944396"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-[#6B8E23] transition-all hover:-translate-y-1 duration-200"
@@ -95,7 +95,7 @@ const Navbar = () => {
             <FaFacebook size={20} />
           </a>
           <a
-            // href="https://wa.me/963937237163"
+            href="https://wa.me/963937237163"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-[#6B8E23] transition-all hover:-translate-y-1 duration-200"
@@ -138,7 +138,7 @@ const Navbar = () => {
             ))}
             <div className="flex space-x-4 pt-4 border-t border-gray-800">
               <a
-                // href="https://github.com/aliasaad01"
+                href="https://github.com/aliasaad01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -146,7 +146,7 @@ const Navbar = () => {
                 <FaGithub size={20} />
               </a>
               <a
-                // href="https://linkedin.com/ali-asaad-21b199243"
+                href="https://linkedin.com/ali-asaad-21b199243"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -154,7 +154,7 @@ const Navbar = () => {
                 <FaLinkedin size={20} />
               </a>
               <a
-                // href="https://facebook.com/lyasd.944396"
+                href="https://facebook.com/lyasd.944396"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -162,7 +162,7 @@ const Navbar = () => {
                 <FaFacebook size={20} />
               </a>
               <a
-                // href="https://instagram.com/ali_as_01"
+                href="https://instagram.com/ali_as_01"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -170,7 +170,7 @@ const Navbar = () => {
                 <FaInstagram size={20} />
               </a>
               <a
-                // href="https://whatsapp.com/963937237163"
+                href="https://whatsapp.com/963937237163"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
