@@ -1,5 +1,5 @@
-import { FaGithub, FaReact } from "react-icons/fa";
-import { SiTailwindcss, SiTypescript } from "react-icons/si";
+// import { FaGithub, FaReact } from "react-icons/fa";
+// import { SiTailwindcss, SiTypescript } from "react-icons/si";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -104,7 +104,7 @@ export default function Hero() {
           </motion.div>
 
           {/* 6. Tech Stack List */}
-          <motion.div variants={itemVariants} className="mb-4 md:mb-0">
+          {/* <motion.div variants={itemVariants} className="mb-4 md:mb-0">
             <p className="text-[#8b949e] mb-3">I'm working with:</p>
             <div className="flex gap-3 flex-wrap justify-center md:justify-start">
               <div className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2 hover:scale-105 transition-all cursor-default will-change-transform">
@@ -148,7 +148,7 @@ export default function Hero() {
                 <p className="text-sm">GitHub</p>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </motion.div>
 
         {/* RIGHT IMAGE - INDEPENDENT SMOOTH SPRING ANIMATION */}

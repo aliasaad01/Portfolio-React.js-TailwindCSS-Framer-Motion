@@ -13,6 +13,7 @@ import {
   SiPrettier,
   SiStyledcomponents,
   SiTailwindcss,
+  SiTypescript,
   SiWebpack,
 } from "react-icons/si";
 // eslint-disable-next-line no-unused-vars
@@ -35,6 +36,10 @@ const mySkills = [
       {
         icon: <RiJavascriptFill size={14} />,
         name: "JavaScript",
+      },
+      {
+        icon: <SiTypescript size={14} />,
+        name: "TypeScript",
       },
       {
         icon: <FaReact size={14} />,
