@@ -76,7 +76,7 @@ export default function Hero() {
           {/* 4. Paragraph */}
           <motion.p
             variants={itemVariants}
-            className="max-w-2xl text-[#8b949e] mb-6 text-xl"
+            className="max-w-2xl text-[#8b949e] mb-6 text-lg md:text-xl"
           >
             I focus on building clean UI, responsive layouts, and real-world
             dashboards.
@@ -85,7 +85,7 @@ export default function Hero() {
           {/* 5. Buttons */}
           <motion.div
             variants={itemVariants}
-            className="flex gap-4 justify-center md:justify-start mb-6"
+            className="flex gap-4 justify-center md:justify-start"
           >
             <a
               href="#projects"
