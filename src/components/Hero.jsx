@@ -31,7 +31,7 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden pb-7
       bg-gradient-to-r from-[#0F1A14] via-[#16251D] to-[#0F1A14]"
     >
-      <div className="container mx-auto px-6 flex justify-between items-center gap-10 z-10 flex-wrap mt-[84px]">
+      <div className="container mx-auto px-6 flex justify-between items-center gap-10 z-10 flex-wrap mt-[70px] md:mt-[84px]">
         {/* LEFT CONTENT - ANIMATED WITH STAGGER */}
         <motion.div
           className="text-center md:text-left flex-1"
