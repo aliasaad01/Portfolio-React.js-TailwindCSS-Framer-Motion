@@ -14,7 +14,7 @@ export const projects = [
       "A professional, accessible, and empathetic website designed for a social counselor based in Sweden. The platform establishes digital credibility and simplifies user outreach by offering organized informational resources and a frictionless consultation booking experience.",
     tools: ["React.js", "TypeScript", "TailwindCSS", "Framer Motion"],
     liveDemo: "https://r-s-sociostod.vercel.app/",
-    img: "/public/rs.png",
+    img: "/rs.png",
   },
 
   {
@@ -43,7 +43,7 @@ export const projects = [
       "Framer Motion",
     ],
     liveDemo: "https://garsah.vercel.app/",
-    img: "/public/garsah.png",
+    img: "/garsah.png",
   },
   {
     title: "Fahad Travel – Luxury Couple's Travel Agency.",
