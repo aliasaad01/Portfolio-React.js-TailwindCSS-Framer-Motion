@@ -1,47 +1,29 @@
-import { useEffect, useRef } from "react";
 import { FaGithub, FaReact } from "react-icons/fa";
 import { SiTailwindcss, SiTypescript } from "react-icons/si";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
 export default function Hero() {
-  const textRef = useRef(null);
+  // إعدادات تتابع حركة النصوص في الطرف الأيسر
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15, // الفارق الزمني بين ظهور كل عنصر والتالي
+        delayChildren: 0.1,
+      },
+    },
+  };
 
-  useEffect(() => {
-    const textElement = textRef.current;
-    if (!textElement) return;
-
-    const roles = [
-      "Frontend Web Developer",
-      "React.js Specialist",
-      "Building Modern Web Apps",
-    ];
-
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-
-    const type = () => {
-      const currentRole = roles[roleIndex];
-      textElement.textContent = currentRole.substring(
-        0,
-        Math.max(0, charIndex),
-      );
-
-      charIndex += isDeleting ? -1 : 1;
-
-      if (!isDeleting && charIndex === currentRole.length) {
-        setTimeout(() => (isDeleting = true), 800);
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-      }
-
-      setTimeout(type, isDeleting ? 50 : 100);
-    };
-
-    setTimeout(type, 1000);
-  }, []);
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut" },
+    },
+  };
 
   return (
     <section
@@ -49,16 +31,17 @@ export default function Hero() {
       className="relative min-h-screen flex items-center overflow-hidden pb-7
       bg-gradient-to-r from-[#0F1A14] via-[#16251D] to-[#0F1A14]"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 90 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-        viewport={{ once: true }}
-        className="container mx-auto px-6 flex justify-between items-center gap-10 z-10 flex-wrap mt-[84px]"
-      >
-        {/* LEFT CONTENT */}
-        <div className="text-center md:text-left flex-1">
-          <span
+      <div className="container mx-auto px-6 flex justify-between items-center gap-10 z-10 flex-wrap mt-[84px]">
+        {/* LEFT CONTENT - ANIMATED WITH STAGGER */}
+        <motion.div
+          className="text-center md:text-left flex-1"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+        >
+          {/* 1. Badge */}
+          <motion.span
+            variants={itemVariants}
             className="px-4 py-1 mb-8 rounded-full text-sm font-medium
             bg-[#6B8E23]/10 text-[#6B8E23] border border-[#6B8E23]
             flex items-center gap-2 w-fit mx-auto md:mx-0"
@@ -68,46 +51,63 @@ export default function Hero() {
               <span className="relative inline-flex rounded-full h-3 w-3 bg-[#6B8E23]"></span>
             </span>
             Available For Freelance Work
-          </span>
+          </motion.span>
 
-          <h1 className="text-4xl md:text-7xl font-bold mb-6 text-white">
+          {/* 2. Title */}
+          <motion.h1
+            variants={itemVariants}
+            className="text-4xl md:text-7xl font-bold mb-6 text-white"
+          >
             Hi, I'm <span className="text-[#7A8F5A]">Ali </span>
             <span className="text-[#6B8E23]">Asaad</span>
-          </h1>
+          </motion.h1>
 
-          <div className="text-xl md:text-2xl text-[#8b949e] mb-6 h-8">
-            <span ref={textRef} className="font-medium text-white"></span>
-          </div>
+          {/* 3. Role description */}
+          <motion.div
+            variants={itemVariants}
+            className="text-xl md:text-2xl text-[#e6edf5] mb-6"
+          >
+            <p className="font-medium">Front-End Engineer</p>
+            <p className="font-medium opacity-80 text-sm md:text-base mt-1">
+              Helping small businesses get more clients
+            </p>
+          </motion.div>
 
-          <p className="max-w-2xl text-[#8b949e] mb-6 text-xl">
+          {/* 4. Paragraph */}
+          <motion.p
+            variants={itemVariants}
+            className="max-w-2xl text-[#8b949e] mb-6 text-xl"
+          >
             I focus on building clean UI, responsive layouts, and real-world
             dashboards.
-          </p>
+          </motion.p>
 
-          <div className="flex gap-4 justify-center md:justify-start mb-6">
+          {/* 5. Buttons */}
+          <motion.div
+            variants={itemVariants}
+            className="flex gap-4 justify-center md:justify-start mb-6"
+          >
             <a
               href="#projects"
               className="px-6 py-3 rounded-full bg-gradient-to-r from-[#6B8E23] to-[#7A8F5A]
-              text-white hover:scale-105 transition"
+              text-white hover:scale-105 transition duration-300"
             >
               View Work
             </a>
             <a
               href="#contact"
               className="px-6 py-3 rounded-full text-[#6B8E23] border-[#6B8E23] border
-              hover:scale-105 transition"
+              hover:scale-105 transition duration-300"
             >
               Contact Me
             </a>
-          </div>
+          </motion.div>
 
-          <div className="mb-4 md:mb-0">
+          {/* 6. Tech Stack List */}
+          <motion.div variants={itemVariants} className="mb-4 md:mb-0">
             <p className="text-[#8b949e] mb-3">I'm working with:</p>
             <div className="flex gap-3 flex-wrap justify-center md:justify-start">
-              <div
-                className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2
-                              hover:scale-105 transition-all cursor-default will-change-transform"
-              >
+              <div className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2 hover:scale-105 transition-all cursor-default will-change-transform">
                 <span>
                   <FaReact
                     className="text-cyan-400"
@@ -117,64 +117,65 @@ export default function Hero() {
                 </span>
                 <p className="text-sm">React</p>
               </div>
-              <div
-                className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2
-                              hover:scale-105 transition-all cursor-default will-change-transform"
-              >
+              <div className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2 hover:scale-105 transition-all cursor-default will-change-transform">
                 <span>
                   <SiTypescript
                     className="text-[#3178c6]"
                     size={16}
-                    aria-label="React logo"
+                    aria-label="TypeScript logo"
                   />
                 </span>
                 <p className="text-sm">TypeScript</p>
               </div>
-              <div
-                className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2
-                              hover:scale-105 transition-all cursor-default will-change-transform"
-              >
+              <div className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2 hover:scale-105 transition-all cursor-default will-change-transform">
                 <span>
                   <SiTailwindcss
                     className="text-sky-400"
                     size={18}
-                    aria-label="React logo"
+                    aria-label="Tailwind CSS logo"
                   />
                 </span>
                 <p className="text-sm">Tailwind CSS</p>
               </div>
-              <div
-                className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2
-                              hover:scale-105 transition-all cursor-default will-change-transform"
-              >
+              <div className="flex gap-2 items-center rounded-lg text-[#8b949e] bg-gray-600/80 border border-gray-500 w-fit px-3 py-2 hover:scale-105 transition-all cursor-default will-change-transform">
                 <span>
                   <FaGithub
                     className="text-gray-800"
                     size={18}
-                    aria-label="React logo"
+                    aria-label="GitHub logo"
                   />
                 </span>
                 <p className="text-sm">GitHub</p>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
-        {/* RIGHT IMAGE */}
-        <div className="relative flex justify-center rounded-3xl border-gray-500 border-4 mx-auto md:mx-0">
+        {/* RIGHT IMAGE - INDEPENDENT SMOOTH SPRING ANIMATION */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9, x: 30 }}
+          animate={{ opacity: 1, scale: 1, x: 0 }}
+          transition={{
+            duration: 0.8,
+            delay: 0.4,
+            type: "spring",
+            stiffness: 60,
+          }}
+          className="relative flex justify-center rounded-3xl border-gray-500 border-4 mx-auto md:mx-0"
+        >
           <div className="overflow-hidden rounded-3xl">
             <img
               src="/myPhoto-p.png"
               alt="Ali Asaad"
               className="w-64 h-64 md:w-[350px] md:h-[350px] object-cover
-            shadow-xl transition-transform duration-700 hover:scale-110 will-change-transform"
+              shadow-xl transition-transform duration-700 hover:scale-110 will-change-transform"
             />
           </div>
 
           <div className="absolute -top-8 -right-4 rounded-3xl -z-10 w-24 h-24 md:w-44 md:h-44 bg-[#7A8F5A]/60 backdrop-blur-md"></div>
           <div className="absolute -bottom-8 -left-4 rounded-3xl -z-10 w-24 h-24 md:w-44 md:h-44 bg-[#7A8F5A]/60 backdrop-blur-md"></div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

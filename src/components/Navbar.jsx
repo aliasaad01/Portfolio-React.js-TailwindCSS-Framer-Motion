@@ -79,7 +79,7 @@ const Navbar = () => {
             <FaGithub size={20} />
           </a>
           <a
-            href="https://www.linkedin.com/in/ali-asaad-21b199243/"
+            href="https://www.linkedin.com/in/ali-asaad-dev/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-[#6B8E23] transition-all hover:-translate-y-1 duration-200"
@@ -146,7 +146,7 @@ const Navbar = () => {
                 <FaGithub size={20} />
               </a>
               <a
-                href="https://linkedin.com/ali-asaad-21b199243"
+                href="https://www.linkedin.com/in/ali-asaad-dev/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"

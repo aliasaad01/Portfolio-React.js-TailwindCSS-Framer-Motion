@@ -58,7 +58,7 @@ const icons = [
   },
   {
     icon: <FaLinkedin size={20} />,
-    href: "https://www.linkedin.com/in/ali-asaad-21b199243/",
+    href: "https://www.linkedin.com/in/ali-asaad-dev/",
   },
   {
     icon: <FaWhatsapp size={20} />,

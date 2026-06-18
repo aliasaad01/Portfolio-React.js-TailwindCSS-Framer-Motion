@@ -1,36 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
-import { FaGithub, FaShare } from "react-icons/fa";
-
-const projects = [
-  {
-    title: "React Admin Dashboard.",
-    description:
-      "A modern admin dashboard built with React.js, designed to manage products and data efficiently through a clean, responsive, dark/light mode and user-friendly interface.",
-    tools: ["React.js", "TailwindCSS", "Redux Toolkit", "React Router"],
-    liveDemo: "https://react-admin-dashboard-five-smoky.vercel.app/",
-    sourceCode: "https://github.com/aliasaad01/React-Admin-Dashboard",
-    img: "/dashboard-3.png",
-  },
-  {
-    title: "amBean Coffee Shop.",
-    description:
-      "amBean is a modern and responsive coffee store designed for a smooth and enjoyable user experience. It features a clean interface, product browsing, cart functionality, a virtual checkout, and dedicated About & Contact pages.",
-    tools: ["React.js", "TypeScript", "TailwindCSS", "React Router"],
-    liveDemo: "https://ambean-coffee-shop.vercel.app/",
-    sourceCode: "https://github.com/aliasaad01/amBean-Coffee-Shop",
-    img: "/amBean-home.png",
-  },
-  {
-    title: "E-Commerce Website.",
-    description:
-      "A modern e-commerce website built with React.js, featuring product browsing, filtering, cart management, and a smooth user experience.",
-    tools: ["React.js", "TailwindCSS", "Redux Toolkit", "React Router"],
-    liveDemo: "https://e-commerce-web-three-beryl.vercel.app/",
-    sourceCode: "https://github.com/aliasaad01/E-commerce-web",
-    img: "/e-commerce-2.png",
-  },
-];
+import { FaShare } from "react-icons/fa";
+import { projects } from "../data/projects";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -82,17 +53,19 @@ const Projects = () => {
           className="flex flex-col gap-10"
         >
           {projects.map((project, i) => (
-            <motion.div
+            <motion.a
               key={i}
+              href={project.liveDemo}
+              target="_blank"
+              rel="noopener noreferrer"
               variants={cardVariants}
               className={`group grid grid-cols-1 md:grid-cols-2 rounded-2xl overflow-hidden
               border border-gray-800 hover:border-[#6B8E23] transition-colors duration-500
-              transform-gpu will-change-transform`}
+              transform-gpu will-change-transform cursor-pointer`}
             >
               <div
                 className={`relative overflow-hidden flex items-center justify-center
                   `}
-                // ${i % 2 !== 0 ? "md:order-2" : "md:order-1"}
               >
                 <img
                   src={project.img}
@@ -106,7 +79,6 @@ const Projects = () => {
               <div
                 className={`col-span-2 md:col-span-1 p-8 flex flex-col bg-[#16251D]
                   `}
-                // ${i % 2 !== 0 ? "md:order-1" : "md:order-2"}
               >
                 <span className="text-[#6B8E23] text-sm font-semibold mb-3">
                   FEATURED PROJECT
@@ -130,26 +102,15 @@ const Projects = () => {
                 </div>
 
                 <div className="flex gap-3">
-                  <a
-                    href={project.liveDemo}
-                    target="_blank"
+                  <div
                     className="bg-[#6B8E23] px-4 py-2 rounded-xl text-white flex items-center gap-2 hover:opacity-90 transition-all hover:scale-105
                                 text-sm md:text-base"
                   >
                     <FaShare /> View Live
-                  </a>
-
-                  <a
-                    href={project.sourceCode}
-                    target="_blank"
-                    className="bg-gray-700 px-4 py-2 rounded-xl text-white flex items-center gap-2 hover:bg-gray-600 transition-all hover:scale-105
-                                text-sm md:text-base"
-                  >
-                    <FaGithub /> Source Code
-                  </a>
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.a>
           ))}
         </motion.div>
         <div className="text-center mt-20 pt-16 border-t border-border relative">
