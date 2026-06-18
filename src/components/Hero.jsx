@@ -165,7 +165,7 @@ export default function Hero() {
         >
           <div className="overflow-hidden rounded-3xl">
             <img
-              src="/myPhoto-p.png"
+              src="/myPhoto.png"
               alt="Ali Asaad"
               className="w-64 h-64 md:w-[350px] md:h-[350px] object-cover
               shadow-xl transition-transform duration-700 hover:scale-110 will-change-transform"
