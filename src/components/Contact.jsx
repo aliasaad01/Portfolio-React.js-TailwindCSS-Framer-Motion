@@ -50,7 +50,7 @@ const icons = [
   },
   {
     icon: <FaInstagram size={20} />,
-    href: "https://instagram.com/ali_as_01",
+    href: "https://instagram.com/aliasaad.dev",
   },
   {
     icon: <FaFacebook size={20} />,

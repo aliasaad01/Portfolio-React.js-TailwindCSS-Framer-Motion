@@ -87,12 +87,12 @@ const Navbar = () => {
             <FaLinkedin size={20} />
           </a>
           <a
-            href="https://facebook.com/lyasd.944396"
+            href="https://instagram.com/aliasaad.dev"
             target="_blank"
             rel="noopener noreferrer"
             className="text-gray-400 hover:text-[#6B8E23] transition-all hover:-translate-y-1 duration-200"
           >
-            <FaFacebook size={20} />
+            <FaInstagram size={20} />
           </a>
           <a
             href="https://wa.me/963937237163"
@@ -162,7 +162,7 @@ const Navbar = () => {
                 <FaFacebook size={20} />
               </a>
               <a
-                href="https://instagram.com/ali_as_01"
+                href="https://instagram.com/aliasaad.dev"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"

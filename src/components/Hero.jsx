@@ -58,8 +58,8 @@ export default function Hero() {
             variants={itemVariants}
             className="text-4xl md:text-7xl font-bold mb-6 text-white"
           >
-            Hi, I'm <span className="text-[#7A8F5A]">Ali </span>
-            <span className="text-[#6B8E23]">Asaad</span>
+            Hi, I'm {/* <span className="text-[#7A8F5A]">Ali </span> */}
+            <span className="text-[#6B8E23]">Ali Asaad</span>
           </motion.h1>
 
           {/* 3. Role description */}
