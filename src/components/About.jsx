@@ -1,6 +1,7 @@
 import { User, Zap, Accessibility, FileCode, Focus } from "lucide-react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 // إعدادات الأنيميشن التتابعي للكروت والعناوين
 const containerVariant = {
@@ -30,30 +31,30 @@ const itemVariant = {
   },
 };
 
+// `id` is the stable translation key (about.philosophy.items.<id>). Icons stay
+// here; the copy comes from the locale files, never from the array index.
 const developmentPhil = [
   {
+    id: "performance",
     icon: <Zap size={22} />,
-    title: "Performance First",
-    text: "Optimized, scalable, and lightning-fast applications.",
   },
   {
+    id: "accessibility",
     icon: <Accessibility size={22} />,
-    title: "Accessibility Matters",
-    text: "Building for everyone, regardless of ability.",
   },
   {
+    id: "clean-code",
     icon: <FileCode size={22} />,
-    title: "Clean Code",
-    text: "Maintainable, readable, and developer-friendly code.",
   },
   {
+    id: "user-centered",
     icon: <Focus size={22} />,
-    title: "User-Centered Design",
-    text: "Interfaces that delight and solve real problems.",
   },
 ];
 
 export default function About() {
+  const { t } = useTranslation();
+
   return (
     <section id="about" className="py-24 bg-[#0F1A14]">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -66,11 +67,11 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-6xl font-extrabold mb-3 tracking-tight">
-            <span className="text-[#fff]">About</span>{" "}
-            <span className="text-[#6B8E23]">Me</span>
+            <span className="text-[#fff]">{t("about.heading.primary")}</span>{" "}
+            <span className="text-[#6B8E23]">{t("about.heading.secondary")}</span>
           </h2>
           <p className="text-gray-400 text-base md:text-lg max-w-md mx-auto">
-            Front-End Developer focused on modern web interfaces
+            {t("about.subtitle")}
           </p>
         </motion.div>
 
@@ -89,22 +90,21 @@ export default function About() {
             </div>
 
             {/* TEXT CONTENT */}
-            <div className="text-center md:text-left">
+            <div className="text-center md:text-start">
               <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white tracking-tight">
-                Hello, I'm <span className="text-[#6B8E23]">Ali Asaad.</span>
+                {t("about.greeting")}{" "}
+                <span className="text-[#6B8E23]">{t("about.name")}</span>
               </h3>
 
               <p className="text-gray-400 leading-relaxed text-base md:text-lg">
-                I'm a{" "}
+                {t("about.bio.prefix")}{" "}
                 <span className="text-[#6B8E23] font-medium">
-                  Front-End Developer
+                  {t("about.bio.role")}
                 </span>{" "}
-                specialized in building responsive and user-friendly interfaces
-                using React.js and Tailwind CSS.
+                {t("about.bio.suffix")}
                 <br className="hidden md:block" />
                 <span className="inline-block mt-3">
-                  I work on transforming ideas into clean, modern, and scalable
-                  web experiences with attention to performance and UI details.
+                  {t("about.bio.detail")}
                 </span>
               </p>
             </div>
@@ -122,13 +122,13 @@ export default function About() {
             variants={itemVariant}
             className="text-2xl md:text-3xl font-bold mb-12 text-center text-white tracking-tight"
           >
-            Development Philosophy
+            {t("about.philosophy.title")}
           </motion.h3>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {developmentPhil.map((item, i) => (
+            {developmentPhil.map((item) => (
               <motion.div
-                key={i}
+                key={item.id}
                 variants={itemVariant}
                 whileHover={{
                   y: -6,
@@ -144,12 +144,12 @@ export default function About() {
 
                 {/* TITLE */}
                 <h4 className="text-white font-bold text-lg mb-2 tracking-wide">
-                  {item.title}
+                  {t(`about.philosophy.items.${item.id}.title`)}
                 </h4>
 
                 {/* TEXT */}
                 <p className="text-gray-400 text-sm leading-relaxed text-center">
-                  {item.text}
+                  {t(`about.philosophy.items.${item.id}.text`)}
                 </p>
               </motion.div>
             ))}

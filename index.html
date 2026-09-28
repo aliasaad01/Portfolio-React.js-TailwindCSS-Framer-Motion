@@ -2,9 +2,104 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/myPhoto.png" />
+    <!--
+      Declared as image/png on purpose: /myPhoto.png IS a PNG, and the previous
+      image/svg+xml type made some browsers reject the icon outright.
+      A small dedicated icon would still be better than the full-size photo.
+    -->
+    <link rel="icon" type="image/png" href="/myPhoto.png" />
+    <link rel="apple-touch-icon" href="/myPhoto.png" />
+    <meta name="theme-color" content="#0F1A14" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--
+      Cairo is used for Arabic only (see html[lang="ar"] in src/index.css);
+      English keeps Tailwind's default system stack. Loaded as a web font so no
+      font package has to be installed.
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <title>Ali Asaad | Front-End Developer (React.js)</title>
+    <link rel="canonical" href="https://ali-asaad-portfolio.vercel.app/" />
+    <link rel="alternate" hreflang="en" href="https://ali-asaad-portfolio.vercel.app/" />
+    <link rel="alternate" hreflang="ar" href="https://ali-asaad-portfolio.vercel.app/ar/" />
+    <link rel="alternate" hreflang="x-default" href="https://ali-asaad-portfolio.vercel.app/" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta
+      name="description"
+      content="Ali Asaad is a Front-End Developer building responsive, scalable, and user-focused web experiences with Next.js, React, JavaScript, TypeScript, and modern web technologies."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ali Asaad | Front-End Developer (React.js)" />
+    <meta
+      property="og:description"
+      content="Ali Asaad is a Front-End Developer building responsive, scalable, and user-focused web experiences with Next.js, React, JavaScript, TypeScript, and modern web technologies."
+    />
+    <meta property="og:url" content="https://ali-asaad-portfolio.vercel.app/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Ali Asaad | Front-End Developer (React.js)" />
+    <meta
+      name="twitter:description"
+      content="Ali Asaad is a Front-End Developer building responsive, scalable, and user-focused web experiences with Next.js, React, JavaScript, TypeScript, and modern web technologies."
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://ali-asaad-portfolio.vercel.app/#person",
+            "name": "Ali Asaad",
+            "url": "https://ali-asaad-portfolio.vercel.app/",
+            "jobTitle": "Front-End Developer",
+            "knowsAbout": [
+              "Next.js",
+              "React.js",
+              "JavaScript",
+              "TypeScript",
+              "Tailwind CSS"
+            ],
+            "sameAs": [
+              "https://github.com/aliasaad01",
+              "https://www.linkedin.com/in/ali-asaad-dev/",
+              "https://instagram.com/aliasaad.dev",
+              "https://facebook.com/lyasd.944396"
+            ]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://ali-asaad-portfolio.vercel.app/#website",
+            "url": "https://ali-asaad-portfolio.vercel.app/",
+            "name": "Ali Asaad | Front-End Developer (React.js)",
+            "publisher": {
+              "@id": "https://ali-asaad-portfolio.vercel.app/#person"
+            }
+          },
+          {
+            "@type": "ProfilePage",
+            "@id": "https://ali-asaad-portfolio.vercel.app/#profilepage",
+            "url": "https://ali-asaad-portfolio.vercel.app/",
+            "name": "Ali Asaad | Front-End Developer (React.js)",
+            "inLanguage": "en",
+            "isPartOf": {
+              "@id": "https://ali-asaad-portfolio.vercel.app/#website"
+            },
+            "about": {
+              "@id": "https://ali-asaad-portfolio.vercel.app/#person"
+            },
+            "mainEntity": {
+              "@id": "https://ali-asaad-portfolio.vercel.app/#person"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

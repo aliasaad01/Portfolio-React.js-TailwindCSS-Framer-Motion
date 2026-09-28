@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
+import { useTranslation } from "react-i18next";
 import {
   FaFacebook,
   FaGithub,
@@ -10,29 +11,64 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
+import { socialLinks, socialLinkIds } from "../data/social";
 
+// `id` is the stable translation key (contact.boxes.<id>.title). Translatable
+// values use `textKey`; raw data such as the email address or phone number is
+// kept verbatim in `text` and is deliberately not localized.
 const contactBoxs = [
   {
+    id: "location",
     icon: <FaLocationDot size={24} />,
-    title: "Location",
-    text: "Syria",
+    textKey: "contact.boxes.location.text",
     href: "https://www.google.com/maps/search/Syria",
+    openInNewTab: true,
   },
   {
+    id: "email",
     icon: <Mail size={24} />,
-    title: "Email",
     text: "ali.asaad.devx@gmail.com",
     // text: "--------- @gmail.com",
     href: "mailto:ali.asaad.devx@gmail.com",
+    openInNewTab: false,
   },
   {
+    id: "phone",
     icon: <FaPhone size={24} />,
-    title: "Phone",
     text: "+963 937237163",
     // text: "+963 ---------",
     href: "tel:+963937237163",
+    openInNewTab: true,
   },
 ];
+
+/**
+ * Gmail's web composer. Desktop/laptop visitors are sent here in a new tab, since
+ * a desktop browser usually has no mail handler configured; touch devices keep
+ * `mailto:` so their installed mail app opens instead.
+ */
+const GMAIL_COMPOSE_URL = "https://mail.google.com/mail/?view=cm&fs=1&to=";
+
+/** True only for pointer-driven devices (desktop / laptop). */
+const usesPointerInput = () =>
+  typeof window !== "undefined" &&
+  window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+/**
+ * Resolves a `mailto:` link for the current device. The address is taken from the
+ * link itself, so it is never duplicated here.
+ */
+const resolveEmailHref = (mailtoHref) => {
+  if (!usesPointerInput()) return { href: mailtoHref, openInNewTab: false };
+
+  return {
+    href: `${GMAIL_COMPOSE_URL}${encodeURIComponent(
+      mailtoHref.replace(/^mailto:/i, ""),
+    )}`,
+    openInNewTab: true,
+  };
+};
+
 const containerVariant = {
   hidden: {},
   show: {
@@ -43,28 +79,14 @@ const containerVariant = {
   },
 };
 
-const icons = [
-  {
-    icon: <FaGithub size={20} />,
-    href: "https://github.com/aliasaad01",
-  },
-  {
-    icon: <FaInstagram size={20} />,
-    href: "https://instagram.com/aliasaad.dev",
-  },
-  {
-    icon: <FaFacebook size={20} />,
-    href: "https://facebook.com/lyasd.944396",
-  },
-  {
-    icon: <FaLinkedin size={20} />,
-    href: "https://www.linkedin.com/in/ali-asaad-dev/",
-  },
-  {
-    icon: <FaWhatsapp size={20} />,
-    href: "https://wa.me/963937237163",
-  },
-];
+// Icons live in the component; the URLs come from the shared social data source.
+const socialIcons = {
+  github: <FaGithub size={20} />,
+  instagram: <FaInstagram size={20} />,
+  facebook: <FaFacebook size={20} />,
+  linkedin: <FaLinkedin size={20} />,
+  whatsapp: <FaWhatsapp size={20} />,
+};
 
 const zoomItem = {
   hidden: { scale: 0.92, opacity: 0 },
@@ -79,6 +101,17 @@ const zoomItem = {
 };
 
 const Contact = () => {
+  const { t } = useTranslation();
+
+  // The email links open Gmail's composer on desktop and keep mailto: on touch
+  // devices; resolving once keeps the address in a single place.
+  const emailLink = resolveEmailHref(
+    contactBoxs.find((item) => item.id === "email").href,
+  );
+  const contactItems = contactBoxs.map((item) =>
+    item.id === "email" ? { ...item, ...emailLink } : item,
+  );
+
   return (
     <section
       id="contact"
@@ -94,13 +127,12 @@ const Contact = () => {
           className="mb-12"
         >
           <h3 className="mb-6 text-white font-bold text-3xl text-center relative">
-            Let's Connect
+            {t("contact.title")}
             <span className="absolute w-20 h-1 bg-[#6B8E23] -bottom-3 left-1/2 -translate-x-1/2"></span>
           </h3>
 
           <p className="text-gray-400 leading-6 text-center max-w-lg mx-auto">
-            Have a project in your mind or want to discuss opportunities? I'm
-            always open to talking about creative ideas and new projects.
+            {t("contact.subtitle")}
           </p>
         </motion.div>
 
@@ -111,14 +143,14 @@ const Contact = () => {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {contactBoxs.map((item, i) => (
+          {contactItems.map((item) => (
             <motion.a
-              key={i}
+              key={item.id}
               whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
               variants={zoomItem}
               href={item.href}
-              target={item.title !== "Email" ? "_blank" : ""}
+              target={item.openInNewTab ? "_blank" : undefined}
               rel="noopener noreferrer"
               className="p-5 border border-gray-500 rounded-xl hover:border-[#6B8E23] transition-colors duration-300
                           will-change-transform transform-gpu mb-6 md:mb-12"
@@ -127,33 +159,37 @@ const Contact = () => {
                 {item.icon}
               </div>
               <h4 className="font-semibold text-white text-center text-xl mb-1">
-                {item.title}
+                {t(`contact.boxes.${item.id}.title`)}
               </h4>
-              <p className="text-sm text-gray-500 text-center">{item.text}</p>
+              <p className="text-sm text-gray-500 text-center">
+                {item.textKey ? t(item.textKey) : item.text}
+              </p>
             </motion.a>
           ))}
         </motion.div>
 
         <div className="flex justify-center gap-4 mb-12">
-          {icons.map((icon, i) => (
+          {socialLinkIds.map((id) => (
             <a
-              key={i}
-              href={icon.href}
+              key={id}
+              href={socialLinks[id].href}
               target="_blank"
               rel="noopener noreferrer"
               className="w-12 h-12 flex items-center justify-center rounded-full border text-white hover:border-[#6B8E23] hover:bg-[#6B8E23] transition-colors duration-300"
             >
-              {icon.icon}
+              {socialIcons[id]}
             </a>
           ))}
         </div>
 
         <div className="text-center">
           <a
-            href="mailto:ali.asaad.devx@gmail.com"
+            href={emailLink.href}
+            target={emailLink.openInNewTab ? "_blank" : undefined}
+            rel={emailLink.openInNewTab ? "noopener noreferrer" : undefined}
             className="inline-block px-6 py-3 rounded-lg bg-[#6B8E23] text-white font-medium hover:bg-[#6B8E23]/90 transition-colors"
           >
-            Start a Conversation
+            {t("contact.button")}
           </a>
         </div>
       </div>

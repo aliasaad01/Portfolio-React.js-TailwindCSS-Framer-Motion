@@ -1,0 +1,152 @@
+{
+  "languages": {
+    "en": "English",
+    "ar": "العربية",
+    "switcher": {
+      "label": "Change language"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "availability": "Available For Freelance Work",
+    "greeting": "Hi, I'm",
+    "name": "Ali Asaad",
+    "photoAlt": "Ali Asaad",
+    "role": "Front-End Engineer",
+    "tagline": "Helping small businesses get more clients",
+    "intro": "I focus on building clean UI, responsive layouts, and real-world dashboards.",
+    "viewWork": "View Work",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "heading": {
+      "primary": "About",
+      "secondary": "Me"
+    },
+    "subtitle": "Front-End Developer focused on modern web interfaces",
+    "greeting": "Hello, I'm",
+    "name": "Ali Asaad.",
+    "bio": {
+      "prefix": "I'm a",
+      "role": "Front-End Developer",
+      "suffix": "specialized in building responsive and user-friendly interfaces using React.js and Tailwind CSS.",
+      "detail": "I work on transforming ideas into clean, modern, and scalable web experiences with attention to performance and UI details."
+    },
+    "philosophy": {
+      "title": "Development Philosophy",
+      "items": {
+        "performance": {
+          "title": "Performance First",
+          "text": "Optimized, scalable, and lightning-fast applications."
+        },
+        "accessibility": {
+          "title": "Accessibility Matters",
+          "text": "Building for everyone, regardless of ability."
+        },
+        "clean-code": {
+          "title": "Clean Code",
+          "text": "Maintainable, readable, and developer-friendly code."
+        },
+        "user-centered": {
+          "title": "User-Centered Design",
+          "text": "Interfaces that delight and solve real problems."
+        }
+      }
+    }
+  },
+  "skills": {
+    "title": "My Skills",
+    "subtitle": "I've worked with a variety of technologies in front-end development. Here are some of my key areas of expertise:",
+    "items": {
+      "frontend": {
+        "title": "Front-End Development",
+        "text": "Building responsive and optimized web applications with modern frameworks."
+      },
+      "styling": {
+        "title": "Styling & UI Frameworks",
+        "text": "Crafting modern and maintainable UI components with efficient styling techniques."
+      },
+      "state": {
+        "title": "State Management",
+        "text": "Handling application state efficiently for scalable applications."
+      },
+      "backend": {
+        "title": "Back-End Integration",
+        "text": "Connecting front-end applications to databases and back-end services."
+      },
+      "tools": {
+        "title": "Development Tools",
+        "text": "Optimizing workflows with modern development and build tools."
+      },
+      "deployment": {
+        "title": "Version Control & Deployment",
+        "text": "Managing code collaboration and deploying applications efficiently."
+      }
+    }
+  },
+  "projects": {
+    "heading": "Recent Projects",
+    "subheading": "Explore my latest work where creativity meets functionality",
+    "featured": "FEATURED PROJECT",
+    "viewLive": "View Live",
+    "items": {
+      "as-byggtjanster": {
+        "title": "AS Byggtjänster AB - Premium Construction & Totalentreprenad Platform.",
+        "description": "AS Byggtjänster AB is a modern, high-performance, and fully responsive web platform engineered for a top-tier Swedish construction and general contracting company operating in Helsingborg. Built with Scandinavian design aesthetics, high-speed asset optimization, and conversion-focused UX, it showcases luxury kitchen renovations, bathroom transformations, and complete construction services with a seamless client inquiry experience."
+      },
+      "rs-sociostod": {
+        "title": "R S Sociostod – Professional Social Counseling Platform.",
+        "description": "A professional, accessible, and empathetic website designed for a social counselor based in Sweden. The platform establishes digital credibility and simplifies user outreach by offering organized informational resources and a frictionless consultation booking experience."
+      },
+      "ambean": {
+        "title": "amBean Coffee Shop.",
+        "description": "amBean is a modern and responsive coffee store designed for a smooth and enjoyable user experience. It features a clean interface, product browsing, cart functionality, a virtual checkout, and dedicated About & Contact pages."
+      },
+      "fahad-travel": {
+        "title": "Fahad Travel – Luxury Couple's Travel Agency.",
+        "description": "A premium digital booking experience crafted for a certified Saudi travel agency, specialized in luxury couples' getaways. The platform showcases high-end accommodations, seamless private transportation options, and curated exploratory itineraries through a sleek, high-conversion modern user interface."
+      }
+    },
+    "cta": {
+      "titlePrefix": "Ready to",
+      "titleAccent": "Collaborate",
+      "titleSuffix": "?",
+      "text": "Let's join forces to create something extraordinary with clean, scalable, and modern solutions",
+      "button": "Start a Project"
+    }
+  },
+  "contact": {
+    "title": "Let's Connect",
+    "subtitle": "Have a project in your mind or want to discuss opportunities? I'm always open to talking about creative ideas and new projects.",
+    "button": "Start a Conversation",
+    "boxes": {
+      "location": {
+        "title": "Location",
+        "text": "Syria"
+      },
+      "email": {
+        "title": "Email"
+      },
+      "phone": {
+        "title": "Phone"
+      }
+    }
+  },
+  "seo": {
+    "title": "Ali Asaad | Front-End Developer (React.js)",
+    "description": "Ali Asaad is a Front-End Developer building responsive, scalable, and user-focused web experiences with Next.js, React, JavaScript, TypeScript, and modern web technologies.",
+    "ogTitle": "Ali Asaad | Front-End Developer (React.js)",
+    "ogDescription": "Ali Asaad is a Front-End Developer building responsive, scalable, and user-focused web experiences with Next.js, React, JavaScript, TypeScript, and modern web technologies."
+  },
+  "footer": {
+    "copyright": "© {{year}}",
+    "name": "Ali Asaad",
+    "rights": ". All rights reserved."
+  }
+}

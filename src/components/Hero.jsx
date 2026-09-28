@@ -2,8 +2,11 @@
 // import { SiTailwindcss, SiTypescript } from "react-icons/si";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   // إعدادات تتابع حركة النصوص في الطرف الأيسر
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -34,7 +37,7 @@ export default function Hero() {
       <div className="container mx-auto px-6 flex justify-between items-center gap-10 z-10 flex-wrap mt-[70px] md:mt-[84px]">
         {/* LEFT CONTENT - ANIMATED WITH STAGGER */}
         <motion.div
-          className="text-center md:text-left flex-1"
+          className="text-center md:text-start flex-1"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -50,7 +53,7 @@ export default function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#6B8E23]"></span>
               <span className="relative inline-flex rounded-full h-3 w-3 bg-[#6B8E23]"></span>
             </span>
-            Available For Freelance Work
+            {t("hero.availability")}
           </motion.span>
 
           {/* 2. Title */}
@@ -58,8 +61,9 @@ export default function Hero() {
             variants={itemVariants}
             className="text-4xl md:text-7xl font-bold mb-6 text-white"
           >
-            Hi, I'm {/* <span className="text-[#7A8F5A]">Ali </span> */}
-            <span className="text-[#6B8E23]">Ali Asaad</span>
+            {t("hero.greeting")}{" "}
+            {/* <span className="text-[#7A8F5A]">Ali </span> */}
+            <span className="text-[#6B8E23]">{t("hero.name")}</span>
           </motion.h1>
 
           {/* 3. Role description */}
@@ -67,9 +71,9 @@ export default function Hero() {
             variants={itemVariants}
             className="text-xl md:text-2xl text-[#e6edf5] mb-6"
           >
-            <p className="font-medium">Front-End Engineer</p>
+            <p className="font-medium">{t("hero.role")}</p>
             <p className="font-medium opacity-80 text-sm md:text-base mt-1">
-              Helping small businesses get more clients
+              {t("hero.tagline")}
             </p>
           </motion.div>
 
@@ -78,8 +82,7 @@ export default function Hero() {
             variants={itemVariants}
             className="max-w-2xl text-[#8b949e] mb-6 text-lg md:text-xl"
           >
-            I focus on building clean UI, responsive layouts, and real-world
-            dashboards.
+            {t("hero.intro")}
           </motion.p>
 
           {/* 5. Buttons */}
@@ -92,14 +95,14 @@ export default function Hero() {
               className="px-6 py-3 rounded-full bg-gradient-to-r from-[#6B8E23] to-[#7A8F5A]
               text-white hover:scale-105 transition duration-300"
             >
-              View Work
+              {t("hero.viewWork")}
             </a>
             <a
               href="#contact"
               className="px-6 py-3 rounded-full text-[#6B8E23] border-[#6B8E23] border
               hover:scale-105 transition duration-300"
             >
-              Contact Me
+              {t("hero.contactMe")}
             </a>
           </motion.div>
 
@@ -166,7 +169,7 @@ export default function Hero() {
           <div className="overflow-hidden rounded-3xl">
             <img
               src="/myPhoto.png"
-              alt="Ali Asaad"
+              alt={t("hero.photoAlt")}
               className="w-64 h-64 md:w-[350px] md:h-[350px] object-cover
               shadow-xl transition-transform duration-700 hover:scale-110 will-change-transform"
             />

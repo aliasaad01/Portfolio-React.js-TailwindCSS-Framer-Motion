@@ -6,8 +6,11 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import useSeoMetadata from "./hooks/useSeoMetadata";
 
 function App() {
+  // Keeps the document metadata in step with the active language (/ or /ar/).
+  useSeoMetadata();
   return (
     <>
       <Navbar />

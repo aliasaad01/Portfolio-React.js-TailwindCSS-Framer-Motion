@@ -1,38 +1,39 @@
+/**
+ * Structural project data only: identity, external links and assets.
+ *
+ * Localized copy (title / description) is NOT stored here — it lives in
+ * src/locales/<lng>/translation.json under `projects.items.<id>` and is resolved
+ * in Projects.jsx through the stable `project.id`, never through the array index.
+ * Adding a project means adding an `id` here plus a matching entry in every locale.
+ */
 export const projects = [
   {
-    title:
-      "AS Byggtjänster AB - Premium Construction & Totalentreprenad Platform.",
-    description:
-      "AS Byggtjänster AB is a modern, high-performance, and fully responsive web platform engineered for a top-tier Swedish construction and general contracting company operating in Helsingborg. Built with Scandinavian design aesthetics, high-speed asset optimization, and conversion-focused UX, it showcases luxury kitchen renovations, bathroom transformations, and complete construction services with a seamless client inquiry experience.",
+    id: "as-byggtjanster",
     tools: ["React.js", "TypeScript", "TailwindCSS", "Framer Motion"],
     liveDemo: "https://www.asbyggtjanster.se/",
-    img: "/asbyggtjanster.webp",
+    img: "/asbyggtjanster.jpg",
   },
   {
-    title: "R S Sociostod – Professional Social Counseling Platform.",
-    description:
-      "A professional, accessible, and empathetic website designed for a social counselor based in Sweden. The platform establishes digital credibility and simplifies user outreach by offering organized informational resources and a frictionless consultation booking experience.",
+    id: "rs-sociostod",
     tools: ["React.js", "TypeScript", "TailwindCSS", "Framer Motion"],
     liveDemo: "https://www.rssociostod.se/",
     img: "/rs.png",
   },
   {
-    title: "amBean Coffee Shop.",
-    description:
-      "amBean is a modern and responsive coffee store designed for a smooth and enjoyable user experience. It features a clean interface, product browsing, cart functionality, a virtual checkout, and dedicated About & Contact pages.",
+    id: "ambean",
     tools: ["React.js", "TypeScript", "TailwindCSS", "React Router"],
     liveDemo: "https://ambean-coffee-shop.vercel.app/",
     sourceCode: "https://github.com/aliasaad01/amBean-Coffee-Shop",
     img: "/amBean-home.png",
   },
   {
-    title: "Fahad Travel – Luxury Couple's Travel Agency.",
-    description:
-      "A premium digital booking experience crafted for a certified Saudi travel agency, specialized in luxury couples' getaways. The platform showcases high-end accommodations, seamless private transportation options, and curated exploratory itineraries through a sleek, high-conversion modern user interface.",
+    id: "fahad-travel",
     tools: ["React.js", "TypeScript", "TailwindCSS", "Framer Motion"],
     liveDemo: "https://www.fahad-travel.com/",
     img: "/fahad.png",
   },
+  // The entries below are disabled drafts. Re-enabling one requires a stable
+  // `id` here plus `projects.items.<id>` copy in every locale file.
   // {
   //   title: "FitFlow – Interactive Women's Fitness Platform.",
   //   description:
